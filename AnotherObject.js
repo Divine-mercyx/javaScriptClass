@@ -6,9 +6,11 @@ const person = {
 }
 
 const displayPerson = (obj) => {
+    let text = "";
     for (key in obj) {
-        console.log(key + ": " + obj[key]);
+        text += "" + key + ": " + obj[key] + ", "
     }
+    console.log(text);
 }
 
 displayPerson(person);
