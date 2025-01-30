@@ -1,0 +1,24 @@
+{
+  "name": "javascriptclass",
+  "version": "1.0.0",
+  "main": "AnotherObject.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Divine-mercyx/javaScriptClass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Divine-mercyx/javaScriptClass/issues"
+  },
+  "homepage": "https://github.com/Divine-mercyx/javaScriptClass#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
