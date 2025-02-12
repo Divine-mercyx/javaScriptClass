@@ -4,6 +4,9 @@ const bankAccount = require('./Object3');
 const inventory = require('./Object4');
 const { default: expect } = require('expect');
 
+test("test to get student scores greater than 70", () => {
+    expect(getScores([87, 34, 99, 77, 34, 5])).toEqual([ 87, 99, 77 ]);
+});
 
 test('Employee class', () => {
     const employee = new Employee('Alice', 'Engineering');
