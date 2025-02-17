@@ -1,0 +1,46 @@
+.body {
+    background-color: rgb(11, 9, 19);
+    height: 100vh;
+}
+
+.side-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.bigger-text {
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+    line-height: 41px;
+}
+
+#left-btn, #right-btn {
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    width: 200px;
+}
+
+#right-btn {
+    margin-left: 30px;
+}
+
+#submit {
+    color: white;
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+}
+
+#password:active {
+    border-color: dodgerblue;
+}
+
+#password, #email, #username {
+    border-radius: 20px;
+}
