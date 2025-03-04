@@ -32,10 +32,9 @@ const Signup = () => {
 
     return (
         <div className="body container-fluid">
-            {error && <div className="alert alert-danger">{error}</div>}
             <div className='container'>
                 <h3 className='text-white pt-4'><b>WeWrite</b></h3>
-
+                {error && <div className="alert alert-danger">{error}</div>}
                 <br/><br/><br/><br/><br/><br/>
                 <div className="row">
                     <div className="col-sm-6">

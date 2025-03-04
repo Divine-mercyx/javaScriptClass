@@ -1,11 +1,13 @@
 import axios from 'axios';
 import {useState} from "react";
 import './login.css'
+import {Link, useNavigate} from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,13 +17,15 @@ const Login = () => {
 
             localStorage.setItem("token", response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
+            navigate("/dashboard");
+
         } catch (error) {
             if (error.response) {
                 if (error.response.status === 404) {
                     setError("User not found");
                 }
                 else if (error.response.status === 400) {
-                    setError("Invalid credentials o");
+                    setError("Invalid credentials");
                 }
                 else {
                     setError("Login failed")
@@ -37,7 +41,7 @@ const Login = () => {
         <div className="body container-fluid">
             <div className='container'>
                 <h3 className='text-white pt-4'><b>WeWrite</b></h3>
-                {error && <p className="error-message">{error}</p>}
+                {error && <div className="alert alert-danger">{error}</div>}
                 <br/><br/><br/><br/><br/><br/>
                 <div className="row">
                     <div className="col-sm-6">
@@ -81,6 +85,7 @@ const Login = () => {
                                 className='form-control bg-dark mb-4 border-0 p-4 text-light'
                                 required
                             />
+                            <Link className="text-decoration-none" to="/signup">don't have an account ? signup </Link>
 
                             <button id='submit' className='btn container btn-primary mt-4'>Sign in</button>
                         </form>

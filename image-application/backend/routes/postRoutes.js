@@ -21,21 +21,21 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { user } = req.body;
+        const { imageUrl, user } = req.body;
 
-        if (!req.file) {
-            res.status(404).json({ message: "no image uploaded" })
+        if (!imageUrl || !user) {
+            return res.status(404).json({ message: "no image uploaded" })
         }
 
         const newPost = new Post({
-            image: req.file.path,
+            image: imageUrl,
             user: user
         });
-        
+
         await newPost.save();
         res.status(200).json({ message: "post created successfully", post: newPost });
     } catch(err) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: err.message });
     }
 })
 
